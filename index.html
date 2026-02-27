@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiago Vieira | Portifolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="particles"></div>
+
+    <nav class="navegation">
+        <ul class="menu">
+            <li><a href="#home" class="menu-link">Home</a></li>
+            <li><a href="#about" class="menu-link">About</a></li>
+            <li><a href="#projects" class="menu-link">Projects</a></li>
+            <li><a href="#contact" class="menu-link">Contact</a></li>
+    </nav>
+
+    <main id="home" class="header">
+        <img src="img/profileimage.jpg" alt="Foto de perfil de Tiago Vieira" class="profile-photo">
+        <h1>Tiago Vieira</h1>
+        <p class="header-subtittle">Software Developer</p>
+    </main>
+
+    <section id="about" class="about">
+        <h2 class="about-tittle">About Me</h2>
+        <div class="about-box">
+            <p class="about-paragraph">Me chamo Tiago, tenho 21 anos e estou cursando Análise e Desenvolvimento de
+                Sistemas no IFSP. Estou focado em aprender novas tecnologias e colocá-las em prática para desenvolver
+                soluções eficientes e inovadoras. Essa web page foi criada com o objetivo de organizar os projetos
+                desenvolvidos ao longo do meu aprendizado e compartilhar meu progresso com o mundo.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="projects-tittle">My Projects</h2>
+        <div class="projects-box">
+            <a href="https://github.com/sapopianista/PacShooterSNCT2025.git"
+                style="text-decoration: none; color: inherit; display: block;" target="_blank">
+                <div class="projects-card">
+                    <img src="img/pacshooter.png" alt="Imagem do projeto 1" class="projects-image">
+                    <div class="text-box-projects">
+                        <h3 class="projects-name">PacShooter</h3>
+                        <p class="projects-description">O PacShooter foi um projeto desenvolvido durante a SNCT 2025
+                            utilizando GameMaker e inspirado na estética do conhecido PacMan, com uma jogabilidade um
+                            pouco diferente. Nesse caso os fantasmas perseguem o PacMan assim como no jogo tradicional,
+                            porem a movimentação é livre e o personagem lança projéteis para eliminá-los.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/sapopianista/apontamento-web.github.io.git"
+                style="text-decoration: none; color: inherit; display: block;" target="_blank">
+                <div class="projects-card">
+                    <img src="img/pontoweb.png" alt="Imagem do projeto 1" class="projects-image">
+                    <div class="text-box-projects">
+                        <h3 class="projects-name">Apontamento de Horas Web</h3>
+                        <p class="projects-description">O Apontamento de Horas Web foi um projeto desenvolvido para
+                            facilitar o controle de horas de funcionários, desenvolvido para substituir o trabalho que
+                            antes era feito através do uso de Excel, o sistema reduziu drasticamente o tempo dedicado
+                            para esses processos e o uso de disco, onde as tabelas eram armazenadas. Desenvolvi
+                            principalmente para uso do departamento pessoal da SEC Contabilidade, onde trabalhei e o
+                            sistema segue em atividade diariamente.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/sapopianista/controle-vencimentos.git"
+                style="text-decoration: none; color: inherit; display: block;" target="_blank">
+                <div class="projects-card">
+                    <img src="img/controlevencimentos.png" alt="Imagem do projeto 1" class="projects-image">
+                    <div class="text-box-projects">
+                        <h3 class="projects-name">Controle de Vencimentos</h3>
+                        <p class="projects-description">O sistema de controle de vencimentos de documentos, foi
+                            desenvolvido para facilitar o dia do setor de legislação da contabilidade SEC, permitindo o
+                            acompanhamento de documentos vencidos, com notificações automáticas configuráveis, geração
+                            de relatórios, anotações e anexos digitais (tanto imagens quanto pdfs).</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <section id="contact" class="contact">
+            <h2 class="contact-tittle">Contact Me</h2>
+
+            <form class="contact-form" id="form" onsubmit="sendWhatsapp(event)">
+                <div class="form-group">
+                    <input placeholder="Name" class="camp-form" id="name">
+                </div>
+                <div class="form-group">
+                    <textarea class="camp-form" placeholder="Your Message" rows="5" id="message"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Whatsapp Message</button>
+            </form>
+        </section>
+
+        <script>
+            function sendWhatsapp(event) {
+                event.preventDefault();
+
+                const nome = document.getElementById('name').value;
+                const message = document.getElementById('message').value;
+                const phone = '5512997428794';
+
+                const text = `Olá, me chamo ${nome}! ${message}`;
+                const messageWhatsapp = encodeURIComponent(text);
+                const url = `https://wa.me/${phone}?text=${messageWhatsapp}`;
+
+                window.open(url, '_blank');
+            }
+        </script>
+<section>
+    <div class="footer">
+        <p class="footer-text">© 2025 Tiago Vieira. All rights reserved.</p>
+        <div class="footer-icons">
+            <img src="img/github.png" alt="GitHub" class="git-icon" onclick="window.open('https://github.com/sapopianista', '_blank')">
+            <img src="img/linkedin.png" alt="LinkedIn" class="linkedin-icon" onclick="window.open('https://www.linkedin.com/in/tiagovieira167/', '_blank')">
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
